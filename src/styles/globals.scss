@@ -1,0 +1,49 @@
+:root {
+  font-family: "Ubuntu", sans-serif;
+}
+
+html,
+body {
+  width: 100vw;
+  min-height: 100vh;
+
+  padding: 0;
+  margin: 0;
+
+  overflow: hidden;
+
+  background-color: transparent;
+  color: #fff;
+}
+
+@keyframes bgAnim1 {
+  0% {
+    left: 0vw;
+  }
+
+  100% {
+    left: -100vw;
+  }
+}
+
+@keyframes bgAnim2 {
+  0% {
+    left: 100vw;
+  }
+
+  100% {
+    left: 0vw;
+  }
+}
+
+.bg {
+  background-color: #000c18;
+
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  z-index: -1;
+}
