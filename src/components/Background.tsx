@@ -35,17 +35,9 @@ export default function Background(props: DetailedHTMLProps<HTMLAttributes<HTMLC
 
         context.drawImage(img, -x, scale.y, width, scale.height);
         context.drawImage(img, width - x, scale.y, width, scale.height);
-        context.fillText(`scaled: ${width}, ${scale.height}`, 20, 190);
 
         if (x > width) x = 0;
       }
-
-      context.fillStyle = "#f00";
-      context.font = "24px sans-serif";
-      context.textBaseline = "top";
-      context.fillText(`img.complete: ${img.complete}`, 20, 100);
-      context.fillText(`x: ${x}`, 20, 130);
-      context.fillText(`image proportions: ${img.naturalWidth}, ${img.naturalHeight}`, 20, 160);
 
       last = now;
       requestAnimationFrame(draw);

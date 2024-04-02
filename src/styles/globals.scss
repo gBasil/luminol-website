@@ -1,3 +1,4 @@
+/* Layout */
 :root {
   font-family: "Ubuntu", sans-serif;
 }
@@ -16,26 +17,6 @@ body {
   color: #fff;
 }
 
-@keyframes bgAnim1 {
-  0% {
-    left: 0vw;
-  }
-
-  100% {
-    left: -100vw;
-  }
-}
-
-@keyframes bgAnim2 {
-  0% {
-    left: 100vw;
-  }
-
-  100% {
-    left: 0vw;
-  }
-}
-
 .bg {
   background-color: #000c18;
 
@@ -46,4 +27,79 @@ body {
   left: 0%;
   top: 0%;
   z-index: -1;
+}
+
+.main {
+  width: 100%;
+  max-width: 960px;
+  height: 100vh;
+
+  margin: 0 auto;
+
+  background-color: #031324;
+  box-shadow: 0 0 50px #000a;
+
+  overflow-y: auto;
+}
+
+a {
+  color: #1d8be9;
+  text-decoration: none;
+}
+
+/* Components */
+button[data-component="button"] {
+  background-color: #000;
+  color: #fff;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: none;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 1.1rem;
+
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+
+  transition: filter 0.125s;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+
+  &:active {
+    filter: brightness(1);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    &:hover {
+      filter: brightness(1);
+    }
+  }
+
+  &[data-variant="primary"] {
+    background-color: #1d8be9;
+
+    &:disabled {
+      background-color: #3f78a8;
+      color: #95c2e8;
+    }
+  }
+
+  &[data-variant="secondary"] {
+    background-color: #213343;
+
+    &:disabled {
+      background-color: #131a20;
+      color: #73787d;
+    }
+  }
 }

@@ -1,0 +1,109 @@
+.header {
+  --pad: 1.5rem;
+  width: calc(100% - var(--pad) * 2);
+  padding: var(--pad);
+
+  background-color: #031324;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+
+  position: sticky;
+  top: 0;
+
+  box-shadow: 0px 0px 10px #0000;
+  transition: padding 0.25s, width 0.25s, box-shadow 0.25s;
+
+  &[data-downscrolled="true"] {
+    --pad: 1rem;
+    box-shadow: 0px 5px 25px #0008;
+
+    & > a.social {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .logo {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+
+    nav {
+      gap: 1rem;
+
+      a {
+        font-size: 1.375rem;
+      }
+    }
+  }
+
+  & > a.social {
+    width: 1.75rem;
+    height: 1.75rem;
+    aspect-ratio: 1;
+
+    background-color: #fff;
+    mask: var(--mask-uri) no-repeat center / contain;
+
+    transition: background-color 0.25s, width 0.25s, height 0.25s;
+
+    &:hover {
+      background-color: #23c6ff;
+    }
+
+    &[data-ref="discord"] {
+      --mask-uri: url("/brands/discord.svg");
+    }
+
+    &[data-ref="steam"] {
+      --mask-uri: url("/brands/steam.svg");
+    }
+
+    &[data-ref="github"] {
+      --mask-uri: url("/brands/github.svg");
+    }
+  }
+
+  .logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    aspect-ratio: 1;
+
+    object-fit: contain;
+
+    transition: width 0.25s, height 0.25s;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+
+    transition: gap 0.25s;
+
+    a {
+      font-size: 1.5rem;
+      font-weight: 400;
+
+      cursor: pointer;
+      color: inherit;
+      text-decoration: none;
+
+      transition: font-size 0.25s, color 0.25s;
+
+      &:hover {
+        color: #c2f1ff;
+      }
+
+      &[data-active="true"] {
+        color: #23c6ff;
+        font-weight: 500;
+      }
+    }
+  }
+}
