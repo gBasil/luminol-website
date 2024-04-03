@@ -29,12 +29,12 @@ export default function Background(props: DetailedHTMLProps<HTMLAttributes<HTMLC
     const layers: Layer[] = [
       {
         image: createImage("/background/tiles.svg"),
-        speed: 0,
+        speed: 25,
         x: 0,
       },
       {
         image: createImage("/background/wave-back.svg"),
-        speed: 75,
+        speed: 50,
         x: 0,
       },
       {
@@ -56,10 +56,11 @@ export default function Background(props: DetailedHTMLProps<HTMLAttributes<HTMLC
       context.clearRect(0, 0, canvas.width, canvas.height);
 
       for (const layer of layers) {
-        const { speed, x, image: img } = layer;
-        layer.x += Math.floor(speed * delta);
+        const { speed, image: img } = layer;
+        layer.x += speed * delta;
 
         if (img.complete) {
+          const x = Math.floor(layer.x);
           const scale = cover(innerWidth, innerHeight, img.naturalWidth, img.naturalHeight);
           const width = Math.floor(scale.width);
 
