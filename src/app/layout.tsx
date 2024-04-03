@@ -7,7 +7,7 @@ import Background from "@/components/Background";
 const font = Ubuntu({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata: Metadata = {
-  title: "???",
+  title: "Luminol",
   description: "???",
 };
 

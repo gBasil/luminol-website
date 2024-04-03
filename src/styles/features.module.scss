@@ -1,0 +1,20 @@
+.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+
+  width: 100%;
+  padding: 0.5rem 0;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  img {
+    height: 12rem;
+
+    border: 2px solid #fff2;
+    border-radius: 0.5rem;
+  }
+}

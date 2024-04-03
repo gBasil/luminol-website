@@ -4,6 +4,7 @@
 import Button from "@/components/Button";
 import Header from "@/components/Header";
 import styles from "@/styles/home.module.scss";
+import Link from "next/link";
 
 type Contributor = {
   id: number;
@@ -27,15 +28,18 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`main ${styles.container}`} ref={containerRef as any}>
+    <div className="main" ref={containerRef as any}>
       <Header containerRef={containerRef} />
 
-      <section className={styles.intro}>
+      <section className="intro">
         <img src="/wordmark.png" alt="Luminol" />
         <span>Luminol is a work in progress remake of the RGSS RPG Maker editors in Rust with love ❤️</span>
 
         <div className={styles.buttonRow} role="listbox">
-          <Button variant="primary">Try it out</Button>
+          <Link href="/web-build">
+            <Button variant="primary">Try it out</Button>
+          </Link>
+
           <Button variant="secondary">Documentation</Button>
         </div>
       </section>
@@ -51,8 +55,11 @@ export default function Home() {
       <section className={styles.feature} data-reverse>
         <img src="/screenshots/2.png" alt="A screenshot of three windows from the event editor on Luminol." />
         <div>
-          <b>Events</b>
-          <span>[WIP] Luminol has a customizable event editor! You can define your own fully custom commands, and even modify build in event commands!</span>
+          <b>
+            Events
+            <small aria-label="Work in progress">WIP</small>
+          </b>
+          <span>Luminol has a customizable event editor! You can define your own fully custom commands, and even modify build in event commands!</span>
         </div>
       </section>
 

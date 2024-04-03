@@ -18,7 +18,8 @@ type HeaderLink = {
 
 const links: HeaderLink[] = [
   { label: "Home", href: "/" },
-  { label: "Web Build", href: "/web-build" },
+  { label: "Web Build", href: "/luminol-build/index.html" },
+  { label: "Features", href: "/features" },
   { label: "News", href: "/news" },
   { label: "FAQ", href: "/faq" },
 ];

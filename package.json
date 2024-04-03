@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/intrinsic-scale": "^3.0.3",
     "intrinsic-scale": "^3.0.4",
+    "lucide-react": "^0.364.0",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
