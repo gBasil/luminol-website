@@ -16,6 +16,9 @@ export default function Background(props: DetailedHTMLProps<HTMLAttributes<HTMLC
 
     const canvas = canvasRef.current as HTMLCanvasElement;
     const context = canvas.getContext("2d")!;
+    const dpr = devicePixelRatio;
+
+    context.scale(dpr, dpr);
 
     let last = 0;
 
@@ -45,8 +48,10 @@ export default function Background(props: DetailedHTMLProps<HTMLAttributes<HTMLC
     ];
 
     const resize = () => {
-      canvas.width = innerWidth;
-      canvas.height = innerHeight;
+      canvas.width = innerWidth * dpr;
+      canvas.height = innerHeight * dpr;
+      canvas.style.width = innerWidth + 'px';
+      canvas.style.height = innerHeight + 'px';
     };
 
     const draw = () => {
@@ -61,7 +66,7 @@ export default function Background(props: DetailedHTMLProps<HTMLAttributes<HTMLC
 
         if (img.complete) {
           const x = Math.floor(layer.x);
-          const scale = cover(innerWidth, innerHeight, img.naturalWidth, img.naturalHeight);
+          const scale = cover(innerWidth * dpr, innerHeight * dpr, img.naturalWidth, img.naturalHeight);
           const width = Math.floor(scale.width);
 
           context.drawImage(img, -x, scale.y, width, scale.height);
