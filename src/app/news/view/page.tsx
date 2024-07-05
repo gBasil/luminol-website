@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import { marked } from "marked";
@@ -16,7 +16,7 @@ import Header from "@/components/Header";
 
 import styles from "@/styles/news.module.scss";
 
-export default function NewsArticle() {
+const Page = () => {
   const containerRef = useRef<HTMLDivElement>();
   const params = useSearchParams();
   const router = useRouter();
@@ -89,5 +89,13 @@ export default function NewsArticle() {
         <span className={styles.loading}>Loading...</span>
       )}
     </div>
+  );
+};
+
+export default function NewsArticle() {
+  return (
+    <Suspense>
+      <Page />
+    </Suspense>
   );
 }
