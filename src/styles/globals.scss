@@ -74,6 +74,27 @@ body {
   }
 }
 
+.error-page {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  translate: -50% -50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  filter: drop-shadow(0 5px 5px #0002);
+
+  img {
+    max-width: calc(100vw - 8rem);
+    border-radius: 0.5rem;
+  }
+}
+
 a {
   color: #1d8be9;
   text-decoration: none;
@@ -92,6 +113,7 @@ button[data-component="button"] {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  text-align: center;
   gap: 0.5rem;
 
   border: none;
@@ -140,6 +162,42 @@ button[data-component="button"] {
   }
 }
 
+input[data-component="input"] {
+  background-color: transparent;
+  color: #fff;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 0.5rem;
+
+  border: 2px solid #fff2;
+  cursor: pointer;
+  outline: none;
+
+  font-family: inherit;
+  font-size: 1.1rem;
+
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+
+  transition: border-color 0.125s, opacity 0.125s;
+
+  &:hover {
+    border-color: #fff4;
+  }
+
+  &:focus {
+    border-color: #1d8be9;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
 details[data-component="collapsible"] {
   display: flex;
   flex-direction: column;
@@ -164,7 +222,27 @@ details[data-component="collapsible"] {
     cursor: pointer;
 
     b {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+
+      width: 100%;
+
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
       font-size: 1.75rem;
+
+      small {
+        background-color: #fff2;
+
+        padding: 0.25rem 0.75rem;
+        border-radius: 100vw;
+
+        font-size: 1rem;
+      }
     }
 
     svg {

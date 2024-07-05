@@ -25,7 +25,7 @@ export default function Features() {
         <Fragment key={`feat-${i}`}>
           <hr />
 
-          <Collapsible title={feat.title}>
+          <Collapsible title={feat.title} label={feat.label}>
             {feat.content}
             {feat.images && (
               <section className={styles.images}>

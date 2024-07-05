@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import Link from "next/link";
 
 import Button from "@/components/Button";
 import Header from "@/components/Header";
 import styles from "@/styles/home.module.scss";
-import Link from "next/link";
 
 type Contributor = {
   id: number;

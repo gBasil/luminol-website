@@ -19,7 +19,7 @@ type HeaderLink = {
 const links: HeaderLink[] = [
   { label: "Home", href: "/" },
   { label: "Web Build", href: "/luminol-build/index.html" },
-  { label: "Features", href: "/features" },
+  // { label: "Features", href: "/features" },
   { label: "News", href: "/news" },
   { label: "FAQ", href: "/faq" },
 ];
@@ -41,7 +41,7 @@ export default function Header(props: HeaderProps) {
   return (
     <header data-downscrolled={String(downscrolled)} className={styles.header}>
       <Link href="/">
-        <img className={styles.logo} src="logo-icon.png" alt="Luminol" />
+        <img className={styles.logo} src="/logo-icon.png" alt="Luminol" />
       </Link>
 
       <nav>

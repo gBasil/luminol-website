@@ -1,11 +1,12 @@
 import { DetailedHTMLProps, HTMLAttributes, useEffect, useRef, useState } from "react";
 import { ChevronDownCircle } from "lucide-react";
 
-type ButtonProps = DetailedHTMLProps<HTMLAttributes<HTMLDetailsElement>, HTMLDetailsElement> & {
+type CollapsibleProps = DetailedHTMLProps<HTMLAttributes<HTMLDetailsElement>, HTMLDetailsElement> & {
   title: string;
+  label?: string;
 };
 
-export default function Collapsible(props: ButtonProps) {
+export default function Collapsible(props: CollapsibleProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDetailsElement>();
 
@@ -22,7 +23,9 @@ export default function Collapsible(props: ButtonProps) {
   return (
     <details data-component="collapsible" data-open={String(open)} ref={ref as any} {...props}>
       <summary>
-        <b>{props.title}</b>
+        <b>
+          {props.title} {props.label && <small>{props.label}</small>}
+        </b>
         <ChevronDownCircle />
       </summary>
 
